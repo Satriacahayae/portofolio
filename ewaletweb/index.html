@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NYIMPEN — Digital Wallet</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-logo">N</div>
+
+          <div class="brand-text">
+            <strong>NYIMPEN</strong>
+            <span>Digital Wallet</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <span class="nav-title"> MENU </span>
+
+          <a href="#dashboard" class="nav-link active" data-page="dashboard">
+            <span>⌂</span>
+            <strong>Dashboard</strong>
+          </a>
+
+          <a href="#transactions" class="nav-link" data-page="transactions">
+            <span>↔</span>
+            <strong>Transactions</strong>
+          </a>
+
+          <a href="#activity" class="nav-link" data-page="activity">
+            <span>◷</span>
+            <strong>Activity</strong>
+          </a>
+
+          <a href="#profile" class="nav-link" data-page="profile">
+            <span>◎</span>
+            <strong>Profile</strong>
+          </a>
+
+          <span class="nav-title nav-title-space"> SETTINGS </span>
+
+          <button class="nav-link theme-toggle" data-theme-toggle>
+            <span>◐</span>
+            <strong>Dark Mode</strong>
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="system-status">
+            <span class="status-dot"></span>
+
+            <div>
+              <strong>System Online</strong>
+              <span>All services operational</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- =====================================================
+             MAIN
+        ====================================================== -->
+
+      <main class="main-content">
+        <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+
+        <header class="topbar">
+          <div class="topbar-search">
+            <span>⌕</span>
+
+            <input type="text" placeholder="Search anything..." />
+          </div>
+
+          <div class="topbar-actions">
+            <button class="icon-button" title="Notifications">
+              🔔
+
+              <span class="notification-dot"> </span>
+
+              <span class="notification-badge"> 0 </span>
+            </button>
+
+            <div class="profile-mini">
+              <div class="profile-avatar">S</div>
+
+              <div class="profile-mini-info">
+                <strong class="profile-mini-name"> Satria </strong>
+
+                <span> Personal Account </span>
+              </div>
+
+              <span class="profile-arrow"> ▾ </span>
+            </div>
+          </div>
+        </header>
+
+        <!-- =================================================
+                 DASHBOARD
+            ================================================== -->
+
+        <section id="dashboard" class="page active">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow"> OVERVIEW </span>
+
+              <h1>Good afternoon, Satria 👋</h1>
+
+              <p>Here's what's happening with your money today.</p>
+            </div>
+          </div>
+
+          <!-- ===============================
+                     DASHBOARD GRID
+                ================================ -->
+
+          <div class="dashboard-grid">
+            <!-- BALANCE -->
+
+            <div class="balance-card">
+              <div class="balance-top">
+                <div>
+                  <span> Total Balance </span>
+
+                  <h2 id="balance">Rp2.450.000</h2>
+                </div>
+
+                <button class="balance-toggle" id="toggleBalance">👁</button>
+              </div>
+
+              <div class="balance-card-bottom">
+                <div class="wallet-number">
+                  <span> NYIMPEN WALLET </span>
+
+                  <strong> **** **** **** 2026 </strong>
+                </div>
+
+                <button class="primary-button" id="topUpButton">+ Top Up</button>
+              </div>
+            </div>
+
+            <!-- INCOME -->
+
+            <div class="stat-card income-card">
+              <div class="stat-icon">↗</div>
+
+              <div>
+                <span> Total Income </span>
+
+                <strong id="totalIncome"> Rp3.500.000 </strong>
+              </div>
+            </div>
+
+            <!-- EXPENSE -->
+
+            <div class="stat-card expense-card">
+              <div class="stat-icon">↘</div>
+
+              <div>
+                <span> Total Expense </span>
+
+                <strong id="totalExpense"> Rp235.000 </strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+                     QUICK ACTIONS
+                ================================================== -->
+
+          <div class="section-block">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow"> SHORTCUTS </span>
+
+                <h2>Quick Actions</h2>
+              </div>
+            </div>
+
+            <div class="quick-actions">
+              <button class="quick-action purple" data-action="Top Up">
+                <div class="quick-icon">+</div>
+
+                <strong> Top Up </strong>
+
+                <span> Add balance </span>
+              </button>
+
+              <button class="quick-action blue" data-action="Transfer">
+                <div class="quick-icon">↗</div>
+
+                <strong> Transfer </strong>
+
+                <span> Send money </span>
+              </button>
+
+              <button class="quick-action green" data-action="Mobile">
+                <div class="quick-icon">☎</div>
+
+                <strong> Mobile </strong>
+
+                <span> Buy credit </span>
+              </button>
+
+              <button class="quick-action orange" data-action="Electricity">
+                <div class="quick-icon">⚡</div>
+
+                <strong> Electricity </strong>
+
+                <span> Pay bills </span>
+              </button>
+
+              <button class="quick-action pink" data-action="QR Pay">
+                <div class="quick-icon">▦</div>
+
+                <strong> QR Pay </strong>
+
+                <span> Scan & pay </span>
+              </button>
+
+              <button class="quick-action yellow" data-action="More">
+                <div class="quick-icon">•••</div>
+
+                <strong> More </strong>
+
+                <span> Other services </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- =================================================
+                     CONTENT GRID
+                ================================================== -->
+
+          <div class="content-grid">
+            <!-- TRANSACTIONS -->
+
+            <div class="panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow"> RECENT </span>
+
+                  <h2>Transactions</h2>
+                </div>
+
+                <button class="text-button" id="viewAllButton">View All</button>
+              </div>
+
+              <div class="transaction-list" id="transactionsList"></div>
+            </div>
+
+            <!-- MINI ANALYTICS -->
+
+            <div class="panel analytics-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow"> ANALYTICS </span>
+
+                  <h2>Spending</h2>
+                </div>
+
+                <span> This week </span>
+              </div>
+
+              <div class="mini-chart"></div>
+
+              <div class="chart-legend">
+                <span> ● Expenses </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+                     CATEGORY ANALYTICS
+                ================================================== -->
+
+          <div class="section-block">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow"> INSIGHTS </span>
+
+                <h2>Spending by Category</h2>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="category-list"></div>
+            </div>
+          </div>
+
+          <!-- =================================================
+                     VIRTUAL CARD
+                ================================================== -->
+
+          <div class="section-block">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow"> YOUR CARD </span>
+
+                <h2>Virtual Card</h2>
+              </div>
+            </div>
+
+            <div class="cards-layout">
+              <div class="virtual-card-wrapper">
+                <div class="virtual-card">
+                  <div class="card-shine"></div>
+
+                  <div class="card-header">
+                    <strong> NYIMPEN </strong>
+
+                    <span> VISA </span>
+                  </div>
+
+                  <div class="chip">▦</div>
+
+                  <div class="card-number">4532 **** **** 2026</div>
+
+                  <div class="card-footer">
+                    <div>
+                      <span> CARD HOLDER </span>
+
+                      <strong> SATRIA CAHAYA </strong>
+                    </div>
+
+                    <div>
+                      <span> VALID THRU </span>
+
+                      <strong> 12/29 </strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-details">
+                <div class="detail-row">
+                  <span> Card type </span>
+
+                  <strong> Virtual Visa </strong>
+                </div>
+
+                <div class="detail-row">
+                  <span> Status </span>
+
+                  <strong class="card-status"> Active </strong>
+                </div>
+
+                <div class="detail-row">
+                  <span> Daily limit </span>
+
+                  <strong> Rp10.000.000 </strong>
+                </div>
+
+                <button class="secondary-button full-button">Manage Card</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================
+                 TRANSACTIONS PAGE
+            ====================================================== -->
+
+        <section id="transactions" class="page">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow"> MONEY MOVEMENT </span>
+
+              <h1>Transactions</h1>
+
+              <p>Track every income and expense from your wallet.</p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="transaction-toolbar">
+              <div class="transaction-search">
+                <span> ⌕ </span>
+
+                <input id="transactionSearch" type="text" placeholder="Search transactions..." />
+              </div>
+
+              <div class="filter-group">
+                <button class="filter-button active" data-filter="all">All</button>
+
+                <button class="filter-button" data-filter="income">Income</button>
+
+                <button class="filter-button" data-filter="expense">Expense</button>
+
+                <button class="filter-button" data-filter="topup">Top Up</button>
+              </div>
+
+              <select class="sort-select">
+                <option value="latest">Latest</option>
+
+                <option value="highest">Highest Amount</option>
+
+                <option value="lowest">Lowest Amount</option>
+              </select>
+            </div>
+
+            <div class="full-transaction-list" id="transactionsList"></div>
+          </div>
+        </section>
+
+        <!-- =====================================================
+                 ACTIVITY PAGE
+            ====================================================== -->
+
+        <section id="activity" class="page">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow"> TIMELINE </span>
+
+              <h1>Activity</h1>
+
+              <p>Your latest account activity and notifications.</p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-heading">
+              <div>
+                <span class="eyebrow"> NOTIFICATIONS </span>
+
+                <h2>Recent Activity</h2>
+              </div>
+            </div>
+
+            <div class="notification-list"></div>
+          </div>
+
+          <div class="insight-panel">
+            <div class="financial-insight">
+              <div class="notification-icon">💡</div>
+
+              <div>
+                <strong> Financial Insight </strong>
+
+                <p>Keep tracking your expenses regularly to understand where your money goes.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================
+                 PROFILE PAGE
+            ====================================================== -->
+
+        <section id="profile" class="page">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow"> ACCOUNT </span>
+
+              <h1>Profile</h1>
+
+              <p>Manage your NYIMPEN account information.</p>
+            </div>
+          </div>
+
+          <div class="profile-grid">
+            <!-- PROFILE -->
+
+            <div class="profile-card">
+              <div class="large-avatar">S</div>
+
+              <div class="profile-member">
+                <span> MEMBER </span>
+
+                <h2 class="profile-name">Satria</h2>
+
+                <p class="profile-email">satriacahya339@gmail.com</p>
+              </div>
+
+              <button class="secondary-button profile-edit" data-action="edit-profile">Edit Profile</button>
+            </div>
+
+            <!-- SETTINGS -->
+
+            <div class="panel settings-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow"> PREFERENCES </span>
+
+                  <h2>Settings</h2>
+                </div>
+              </div>
+
+              <div class="setting-row">
+                <div>
+                  <strong> Dark Mode </strong>
+
+                  <span> Change the appearance of NYIMPEN. </span>
+                </div>
+
+                <button class="switch theme-toggle" data-theme-toggle>
+                  <span class="slider"></span>
+                </button>
+              </div>
+
+              <div class="setting-row">
+                <div>
+                  <strong> Notifications </strong>
+
+                  <span> Receive account notifications. </span>
+                </div>
+
+                <button class="switch">
+                  <span class="slider"></span>
+                </button>
+              </div>
+            </div>
+
+            <!-- SECURITY -->
+
+            <div class="panel security-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow"> SECURITY </span>
+
+                  <h2>Account Security</h2>
+                </div>
+              </div>
+
+              <div class="security-item">
+                <div class="security-icon">🔐</div>
+
+                <div>
+                  <strong> Wallet PIN </strong>
+
+                  <span> Your PIN is required for secure transactions. </span>
+                </div>
+
+                <span class="security-active"> Active </span>
+              </div>
+
+              <div class="security-item">
+                <div class="security-icon">🛡</div>
+
+                <div>
+                  <strong> Account Protection </strong>
+
+                  <span> Basic security protection is enabled. </span>
+                </div>
+
+                <span class="security-active"> Active </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =====================================================
+                 FOOTER
+            ====================================================== -->
+
+        <footer>
+          <span> © 2026 NYIMPEN </span>
+
+          <span> Digital Wallet Concept · Frontend Project </span>
+        </footer>
+      </main>
+    </div>
+
+    <!-- =========================================================
+         MOBILE NAV
+    ========================================================== -->
+
+    <nav class="mobile-nav">
+      <a href="#dashboard" class="mobile-nav-link active" data-page="dashboard">
+        <span>⌂</span>
+        Dashboard
+      </a>
+
+      <a href="#transactions" class="mobile-nav-link" data-page="transactions">
+        <span>↔</span>
+        Transactions
+      </a>
+
+      <a href="#activity" class="mobile-nav-link" data-page="activity">
+        <span>◷</span>
+        Activity
+      </a>
+
+      <a href="#profile" class="mobile-nav-link" data-page="profile">
+        <span>◎</span>
+        Profile
+      </a>
+    </nav>
+
+    <!-- =========================================================
+         TOP UP MODAL
+    ========================================================== -->
+
+    <div class="modal" id="topUpModal" aria-hidden="true">
+      <div class="modal-box">
+        <button class="modal-close" id="closeTopUp">×</button>
+
+        <div class="modal-icon">+</div>
+
+        <h2>Top Up Wallet</h2>
+
+        <p>Add balance to your NYIMPEN wallet.</p>
+
+        <form id="topUpForm">
+          <label> Amount </label>
+
+          <div class="amount-input">
+            <span> Rp </span>
+
+            <input id="topUpAmount" type="number" min="1000" placeholder="0" required />
+          </div>
+
+          <div class="amount-presets">
+            <button type="button" onclick="document.getElementById('topUpAmount').value = 50000">50K</button>
+
+            <button type="button" onclick="document.getElementById('topUpAmount').value = 100000">100K</button>
+
+            <button type="button" onclick="document.getElementById('topUpAmount').value = 250000">250K</button>
+
+            <button type="button" onclick="document.getElementById('topUpAmount').value = 500000">500K</button>
+          </div>
+
+          <button type="submit" class="primary-button full-button">Add Balance</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         TRANSFER MODAL
+    ========================================================== -->
+
+    <div class="modal" id="transferModal" aria-hidden="true">
+      <div class="modal-box">
+        <button class="modal-close" id="closeTransfer">×</button>
+
+        <div class="modal-icon">↗</div>
+
+        <h2>Send Money</h2>
+
+        <p>Transfer money to another person.</p>
+
+        <form id="transferForm">
+          <label> Recipient </label>
+
+          <input id="recipient" type="text" placeholder="Recipient name" required />
+
+          <label> Amount </label>
+
+          <div class="amount-input">
+            <span> Rp </span>
+
+            <input id="transferAmount" type="number" min="1000" placeholder="0" required />
+          </div>
+
+          <div class="transfer-balance">
+            <span> Available balance </span>
+
+            <strong id="transferBalance"> Rp2.450.000 </strong>
+          </div>
+
+          <button type="submit" class="primary-button full-button">Continue Transfer</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="./script.js"></script>
+  </body>
+</html>
